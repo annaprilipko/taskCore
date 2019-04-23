@@ -24,7 +24,6 @@ public class Solution {
         for(int i = 0; i < inputArray.length; i++){
             if (inputArray[i] < min) min = inputArray[i];
         }
-        
 
         return new Pair<Integer, Integer>(min, max);
     }
