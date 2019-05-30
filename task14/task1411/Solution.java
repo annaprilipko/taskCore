@@ -18,7 +18,7 @@ public class Solution {
         while(checkExit) {
 
             key = reader.readLine();
-
+            //переменная checkExit никогда не бывает false. Но зачем она тогда нужна.
             if(key.equals("user") || key.equals("loser") || key.equals("coder") || key.equals("proger"))checkExit = true;
             else break;
 
@@ -31,6 +31,7 @@ public class Solution {
             } else {
                 person = new Person.Proger();
             }
+            // Да можно немного упростить код. Но лучше при встречи это обсудить потому что много писать)
 
             doWork(person);
         }
