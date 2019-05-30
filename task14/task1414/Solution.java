@@ -16,7 +16,7 @@ public class Solution {
             String key = reader.readLine();
 
             Movie movie = MovieFactory.getMovie(key);
-
+            // тут та же беда с переменной checkExit. Она никогда не меняется и ведёт бессмысленную жизнь)
             if(key.equals("cartoon") || key.equals("thriller") || key.equals("soapOpera")) checkExit = true;
             else break;
 
@@ -29,7 +29,7 @@ public class Solution {
 
         static Movie getMovie(String key) {
             Movie movie = null;
-
+            //может ли в метод попасть неверный ключ? и что в таком случае произойдёт?
             if ("soapOpera".equals(key)) {
                 movie = new SoapOpera();
             } else if ("cartoon".equals(key)){
@@ -37,7 +37,7 @@ public class Solution {
             } else if("thriller".equals(key)){
                 movie = new Thriller();
             }else{
-
+                //Непонятно зачем нужен последний елсе
             }
 
             return movie;
