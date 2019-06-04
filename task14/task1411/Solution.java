@@ -15,25 +15,33 @@ public class Solution {
 
         boolean checkExit = true;
 
-        while(checkExit) {
+       while(checkExit){
 
-            key = reader.readLine();
+           key = reader.readLine();
 
-            if(key.equals("user") || key.equals("loser") || key.equals("coder") || key.equals("proger"))checkExit = true;
-            else break;
+           switch (key){
+               case ("user"):
+                   person = new Person.User();
+                   doWork(person);
+                   break;
+               case ("loser"):
+                   person = new Person.Loser();
+                   doWork(person);
+                   break;
+               case ("coder"):
+                   person = new Person.Coder();
+                   doWork(person);
+                   break;
+               case ("proger"):
+                   person = new Person.Proger();
+                   doWork(person);
+                   break;
+               default:
+                   checkExit = false;
+                   break;
+           }
 
-            if (key.equals("user")) {
-                person = new Person.User();
-            } else if (key.equals("loser")) {
-                person = new Person.Loser();
-            } else if (key.equals("coder")) {
-                person = new Person.Coder();
-            } else {
-                person = new Person.Proger();
-            }
-
-            doWork(person);
-        }
+       }
     }
 
     public static void doWork(Person person) {
